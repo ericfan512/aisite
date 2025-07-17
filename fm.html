@@ -12,12 +12,18 @@
         <div align="center">In order to manipulate faces, AI first has to understand how they work.
         </div>
         <div align="center">
-            The 68-point landmark model is used to map important facial features in 2D space (x,y). The jaw line and bottom of the face is defined using 17 points, the eyebrows (for expression) are defined using 10 points, the eyes are defined using 12 points, the nose is defined using 9 points, and the mouth is defined using 20 points. However, 3D faces include 5,023 vertices in 3D space (FLAME).
+            The 68-point landmark model is used to map important facial features in 2D space (x,y). The jaw line and bottom of the face is defined using 17 points, the eyebrows (for expression) are defined using 10 points, the eyes are defined using 12 points, the nose is defined using 9 points, and the mouth is defined using 20 points. 
+            <figure>
+                <img src="sixtyeightpoint.jpg" width=400px>
+                <figcaption><a href="https://www.tugraz.at/fileadmin/user_upload/Institute/ICG/Documents/lrs/pubs/koestinger_befit_11.pdf">source</a></figcaption>
+            </figure>
+            <br>
+            3D faces include the definition of 5,023 vertices in 3D space (FLAME).
             <br>
             In order to make a virtual avatar appear to be talking with accurate facial movements, each of the fifteen English <a href="https://developers.meta.com/horizon/documentation/unity/audio-ovrlipsync-viseme-reference/">visemes</a> (unique mouth shapes corresponding to one or more sounds) need to be mapped onto the avatar.
         </div>
         <div align="center">
-            <a href="https://www.ibm.com/think/topics/convolutional-neural-networks">Convolutional neural networks (CNNs)</a> can be used to detect important facial landmarks. Such neural networks compress images by applying a filter that makes their important features stand out from unimportant features.
+            <a href="https://poloclub.github.io/cnn-explainer/" target="_blank">Convolutional neural networks (CNNs)</a> can be used to detect important facial landmarks. Such neural networks compress images by applying a filter that creates a lower resolution image by averaging out multiple pixel values to create the new pixels, making their important features stand out from less important features.
         </div>
         <h4><div align="center"><a href="index.html">Back</a></div></h4>
     </body>
