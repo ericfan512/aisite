@@ -7,14 +7,17 @@
         </style>
     </head>
     <body>
-        <div align="center"><h2>The Basics Behind Face Analysis</h2></div>
+        <div align="center"><h2>The Basics Behind Facial Analysis</h2></div>
         <br>
-        <div align="center">In order to manipulate faces, AI first has to understand how faces work.
+        <div align="center">In order to manipulate faces, AI first has to understand how they work.
         </div>
         <div align="center">
             The 68-point landmark model is used to map important facial features in 2D space (x,y). The jaw line and bottom of the face is defined using 17 points, the eyebrows (for expression) are defined using 10 points, the eyes are defined using 12 points, the nose is defined using 9 points, and the mouth is defined using 20 points.
             <br>
-            In order to make a virtual avatar appear to be talking with accurate facial movements, each of the fifteen English visemes (unique mouth shapes corresponding to certain sounds) need to be mapped onto the avatar.
+            In order to make a virtual avatar appear to be talking with accurate facial movements, each of the fifteen English <a href="https://developers.meta.com/horizon/documentation/unity/audio-ovrlipsync-viseme-reference/">visemes</a> (unique mouth shapes corresponding to one or more sounds) need to be mapped onto the avatar.
+        </div>
+        <div align="center">
+            <a href="https://www.ibm.com/think/topics/convolutional-neural-networks">Convolutional neural networks (CNNs)</a> can be used to detect important facial landmarks. Such neural networks compress images by applying a filter that makes their important features stand out from unimportant features.
         </div>
         <h4><div align="center"><a href="index.html">Back</a></div></h4>
     </body>
