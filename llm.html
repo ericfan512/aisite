@@ -4,6 +4,9 @@
             h4{
                 font-size: 36px;
             }
+            figcaption{
+                font-size: 10px;
+            }
         </style>
     </head>
     <body>
@@ -17,8 +20,13 @@
             However, less likely next words are picked at random in order to ensure unique responses every time the question is asked.
             LLMs assess the probability of next words using large amounts of parameters (GPT-4 has over 1.7 trillion!) that dictate how such calculations should be made.
             All parameters start at a random value, and the algorithm is trained by showing it all words in each passage of training data except the last. The current parameters are used to guess the last word, and the best way to improve the algorithm is calculated using <a href="https://www.geeksforgeeks.org/machine-learning/backpropagation-in-neural-network/">backpropagation</a>.
-            <br>
-            In the past few years, transformers allowed for the creation of better LLMs. They allow words in a sentence to look at every other word in the sentence to gain context and understand the order the words are placed in. The importance of each word can be adjusted depending on the context.
+            <figure>
+                <img src="bpnn.png">
+                <figcaption><a href="https://www.geeksforgeeks.org/machine-learning/backpropagation-in-neural-network/">source</a></figcaption>
+            </figure>
+        </div>
+        <div align="center">
+            In the past few years, <a href="https://poloclub.github.io/transformer-explainer/">transformers</a> have allowed for the creation of better LLMs. They allow words in a sentence to look at every other word in the sentence to gain context and understand the order the words are placed in. The importance of each word can be adjusted depending on the context.
         </div>
         <h4><div align="center"><a href="index.html">Back</a></div></h4>
     </body>
