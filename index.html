@@ -15,20 +15,19 @@
             h6{
                 font-size: 36px;
             }
+            .left, .right {
+                display: inline-block;
+            }
         </style>
     </head>
     <body>
         <div align="center"><h1>Avatar Video Generator</h1><h3 style="color:gray">using HeyGen API</h3><h5>Eric Fan (ericfan512@gmail.com)</h5></div>
         <br>
-        <div align="center">
-            In recent decades and especially the past few years, countless advancements have been made in the field of artificial intelligence (AI). Most notably, <a href="llm.html">large language models (LLMs)</a>, such as <a href="https://chatgpt.com" target="_blank">ChatGPT</a> and <a href="https://gemini.google.com/" target="_blank">Gemini</a>, can hold flawless conversations and provide accurate, up-to-date information. These LLMs are trained using <a href="abtnn.html">neural networks</a> composed of hundreds of layers of neurons as well as many terabytes of data.
-        </div>
+        In recent decades and especially the past few years, countless advancements have been made in the field of artificial intelligence (AI). Most notably, <a href="llm.html">large language models (LLMs)</a>, such as <a href="https://chatgpt.com" target="_blank">ChatGPT</a> and <a href="https://gemini.google.com/" target="_blank">Gemini</a>, can hold flawless conversations and provide accurate, up-to-date information. These LLMs are trained using <a href="abtnn.html">neural networks</a> composed of hundreds of layers of neurons as well as many terabytes of data.
         <br>
-        <div align="center">
-            However, there are many uses of neural networks that result in the generation of information that is not text-based. For instance, virtual avatar tools allow for the production of realistic video when given visual and/or audio information about a person. Videos that are generated using such tools can be used to convey information in a lifelike manner without it needing to be directly stated. Companies such as <a href = "https://app.heygen.com/" target="_blank">HeyGen</a> and <a href = "https://www.synthesia.io/" target="_blank">Synthesia</a> are paving the way for such technologies to become more widespread.
-            <h4>Read more: <a href="fm.html">The Basics Behind Facial Analysis</a></h4>
-            <br>
-        </div>
+        However, there are many uses of neural networks that result in the generation of information that is not text-based. For instance, virtual avatar tools allow for the production of realistic video when given visual and/or audio information about a person. Videos that are generated using such tools can be used to convey information in a lifelike manner without it needing to be directly stated. Companies such as <a href = "https://app.heygen.com/" target="_blank">HeyGen</a> and <a href = "https://www.synthesia.io/" target="_blank">Synthesia</a> are paving the way for such technologies to become more widespread.
+        <h4>Read more: <a href="fm.html">The Basics Behind Facial Analysis</a></h4>
+        <br>
         There are many use cases for virtual avatars, most of which fall under a couple main concepts:
         <ul>
         <li>They can be used to easily transmit information to the public in video format, which many find more engaging than reading text.
@@ -45,50 +44,47 @@
             </ul></h5>
         </li>
         </ul>
+            <h2>What is your personality? (based on blood type)</h2>
         <div align="center">
-            <h3>Example Videos</h3>
-        </div>
-        <div align="center">
-            <figure>
+            <figure class="left">
                 <video width="500" controls>
                     <source src="ablood.mp4" type="video/mp4">
                     Your browser does not support HTML video.
                 </video>
-                <figcaption>Type A Blood Personality explainer</figcaption>
+                <figcaption>Type A</figcaption>
             </figure>
-            <figure>
+            <figure class="right">
                 <video width="500" controls>
                     <source src="bblood.mp4" type="video/mp4">
                     Your browser does not support HTML video.
                 </video>
-                <figcaption>Type B Blood Personality explainer</figcaption>
+                <figcaption>Type B</figcaption>
             </figure>
-            <br>
-            <figure>
+        </div>
+        <div align="center">
+            <figure class="left">
                 <video width="500" controls>
                     <source src="abblood.mp4" type="video/mp4">
                     Your browser does not support HTML video.
                 </video>
-                <figcaption>Type AB Blood Personality explainer</figcaption>
+                <figcaption>Type AB</figcaption>
             </figure>
-            <figure>
+            <figure class="right">
                 <video width="500" controls>
                     <source src="oblood.mp4" type="video/mp4">
                     Your browser does not support HTML video.
                 </video>
-                <figcaption>Type O Blood Personality explainer</figcaption>
+                <figcaption>Type O</figcaption>
             </figure>
             <br>
         </div>
         <br>
-        <div align="center">
-            Due to the relative complexities of creating and training a new AI, I used HeyGen’s API in order to create the videos that appear above. The API allows for the creation of short (max. 2000 characters) videos given an image of a human face and what the user wants the face to appear to say, making it perfect for creating short-form content. 
-            The API is also easily accessible, as API keys can be obtianed for free by signing up for a HeyGen account. 
-            <br>The user is able to choose between two of the most commonly spoken languages (English and Chinese) as well as between male or female and young or mature voices. The voices were obtained from HeyGen’s <a href="https://app.heygen.com/voices" target="_blank">voice library</a>. <br>I used <a href="https://grok.com/" target="_blank">Grok 3</a> to generate realistic-looking faces in order to demonstrate the technology in an ethical manner.
-            <br>The <a href="https://streamlit.io/" target="_blank">streamlit library</a> with Python was used to create a user interface to allow for easy usage of the API. Streamlit allows for the development of simple, interactive programs without needing to build a complex frontend.
-            <br>Since I had limited experience with the streamlit library before the creation of the interface for this project, I periodically used ChatGPT as a resource to explain the errors I was encountering and to aid in fixing them.
-            <br>This site was built using HTML.
-        </div>
+        Due to the relative complexities of creating and training a new AI, I used HeyGen’s API in order to create the videos that appear above. The API allows for the creation of short (max. 2000 characters) videos given an image of a human face and what the user wants the face to appear to say, making it perfect for creating short-form content. 
+        The API is also easily accessible, as API keys can be obtianed for free by signing up for a HeyGen account. 
+        <br>The user is able to choose between two of the most commonly spoken languages (English and Chinese) as well as between male or female and young or mature voices. The voices were obtained from HeyGen’s <a href="https://app.heygen.com/voices" target="_blank">voice library</a>. <br>I used <a href="https://grok.com/" target="_blank">Grok 3</a> to generate realistic-looking faces in order to demonstrate the technology in an ethical manner.
+        <br>The <a href="https://streamlit.io/" target="_blank">streamlit library</a> with Python was used to create a user interface to allow for easy usage of the API. Streamlit allows for the development of simple, interactive programs without needing to build a complex frontend.
+        <br>Since I had limited experience with the streamlit library before the creation of the interface for this project, I periodically used ChatGPT as a resource to explain the errors I was encountering and to aid in fixing them.
+        <br>This site was built using HTML.
         <br>
         <div align="center">
             <h3>If there are any issues you encounter while utilizing the site, please feel free to email me.</h3>
@@ -98,7 +94,7 @@
             <br>
             Video generated by HeyGen API
             <br>
-            Last modified: 18 July 2025
+            Last modified: 20 July 2025
         </h4>
     </body>
 </html>
