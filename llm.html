@@ -21,11 +21,6 @@
         LLMs assess the probability of next words using large amounts of parameters (GPT-4 has over 1.7 trillion!) that dictate how such calculations should be made.
         All parameters start at a random value, and the algorithm is trained by showing it all words in each passage of training data except the last. The current parameters are used to guess the last word, and the best way to improve the algorithm is calculated using <a href="https://www.geeksforgeeks.org/machine-learning/backpropagation-in-neural-network/" target="_blank">backpropagation</a>.
         <div align="center">
-            <figure>
-                <img src="bpnn.png" width=600px>
-                <figcaption><a href="https://www.geeksforgeeks.org/machine-learning/backpropagation-in-neural-network/" target="_blank">source</a></figcaption>
-            </figure>
-            <br>
             In the past few years, <a href="https://poloclub.github.io/transformer-explainer/" target="_blank">transformers</a> have allowed for the creation of better LLMs. They allow words in a sentence to look at every other word in the sentence to gain context and understand the order the words are placed in (<a href="https://www.geeksforgeeks.org/artificial-intelligence/ml-attention-mechanism/" target="_blank">attention mechanism</a>). The importance of each word can be adjusted depending on the context.
         </div>
         <h4><a href="index.html">Back</a></h4>
