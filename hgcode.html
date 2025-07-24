@@ -1,0 +1,38 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <div align="center">
+            <h2>A Brief Code Overview</h2>
+        </div>
+        <strong>
+            <pre>
+                def get_headers():
+                    return {
+                        "Accept": "application/json",
+                        "Content-Type": "application/json",
+                        "X-Api-Key": API_KEY
+                    }
+                ...
+                def create_avatar_group(name, image_key):
+                    ...
+                    payload = {"name": name, "image_key": image_key}
+                    ...
+                    response = requests.post("https://api.heygen.com/v2/photo_avatar/avatar_group/create",
+                                            headers=get_headers(), json=payload)
+            </pre>
+        </strong>
+        <br>
+        This snippet of code tells HeyGen to create a new avatar group.
+        <br>
+        The function get_headers() returns the necessary header to pass into HeyGen's API in order to be able to utilize it.
+        This header includes three parts: "Accept" dictates HeyGen's reponse format, "Content-Type" dictates our request format, and "X-Api-Key" is our API key.
+        <br>
+        The payload is the data being sent to HeyGen. The variables name and image_key were passed in to the function the avatar generation process is occurring in.
+        "name" is what HeyGen will call the avatar, and "image_key" is the identifier pointing to the photo HeyGen should use to create the video.
+        <br>
+        requests.post uses the requests module to send data to the given URL. In this case, the necessary header and the payload data is being sent.
+        <h4><a href="index.html">Back</a></h4>
+    </body>
+</html>
