@@ -1,6 +1,5 @@
 <html>
     <head>
-
     </head>
     <body>
         <div align="center">
@@ -23,7 +22,6 @@
                                             headers=get_headers(), json=payload)
             </pre>
         </strong>
-        <br>
         When these functions are called, this snippet of code tells HeyGen to create a new avatar group.
         <br>
         The function get_headers() returns the necessary header to pass into HeyGen's API in order to be able to utilize it.
@@ -33,6 +31,7 @@
         "name" is what HeyGen will call the avatar, and "image_key" is the identifier pointing to the photo HeyGen should use to create the video.
         <br>
         requests.post uses the requests module to send data to the given URL. In this case, the necessary header and the payload data is being sent.
+        <br>
         <strong>
             <pre>
                 def train_avatar_group(group_id):
@@ -53,11 +52,66 @@
                     ...
             </pre>
         </strong>
-        <br>
         When this function is called, this snippet of code tells HeyGen to train the avatar with the given group_id.
         <br>
         If HeyGen returns a status code 200 (server received information and can process request) and there is no error, then training has started.
         If there is a status code 400 (server unable to process request) returned, then training is unable to occur (often due to API usage limits).
+        <br>
+        <strong>
+            <pre>
+                def generate_heygen_video(character_id, text, selected_voice_id):
+                    headers = {
+                        "Content-Type": "application/json",
+                        "X-Api-Key": API_KEY
+                    }
+                    character_config = {
+                        "type": "talking_photo",
+                        "talking_photo_id": character_id
+                    }
+                    payload = {
+                        "video_inputs": [
+                            {
+                                "character": character_config,
+                                "voice": {
+                                    "type": "text",
+                                    "input_text": text,
+                                    "voice_id": selected_voice_id
+                                },
+                                "background": {"type": "color", "value": "#ffffff"}
+                            }
+                        ],
+                        "dimension": {"width": 720, "height": 406},
+                        ...
+                    }
+                    ...
+                    response = requests.post(
+                        "https://api.heygen.com/v2/video/generate",
+                        headers=headers,
+                        json=payload
+                    )
+                    response_json = response.json()
+                    ...
+                    video_id = response_json["data"].get("video_id")
+                    ...
+                    while True:
+                        time.sleep(0.5)
+                        status_response = requests.get(
+                            f"https://api.heygen.com/v1/video_status.get?video_id={video_id}",
+                            headers=headers
+                        )
+                        if status_response.status_code != 200:
+                            continue
+
+                        status_data = status_response.json()
+                        if status_data.get("data", {}).get("status") == "completed":
+                            video_url = status_data["data"].get("video_url")
+                            return video_url
+                    ...
+            </pre>
+        </strong>
+        when the generate_heygen_video function is called (with the photo ID, text that must be spoken, and voice ID passed in), a request will be made to the HeyGen API for the video to be generated.
+        <br>
+        After the request is made, the program will continuously check the status of the request until video generation is complete (status code will be 200 and the generation status will be "complete"). At that point, it will return the video URL, which can then be visible on the frontend.
         <h4><a href="index.html">Back</a></h4>
     </body>
 </html>
