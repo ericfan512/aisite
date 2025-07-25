@@ -24,7 +24,7 @@
             </pre>
         </strong>
         <br>
-        This snippet of code tells HeyGen to create a new avatar group.
+        When these functions are called, this snippet of code tells HeyGen to create a new avatar group.
         <br>
         The function get_headers() returns the necessary header to pass into HeyGen's API in order to be able to utilize it.
         This header includes three parts: "Accept" dictates HeyGen's reponse format, "Content-Type" dictates our request format, and "X-Api-Key" is our API key.
@@ -33,6 +33,31 @@
         "name" is what HeyGen will call the avatar, and "image_key" is the identifier pointing to the photo HeyGen should use to create the video.
         <br>
         requests.post uses the requests module to send data to the given URL. In this case, the necessary header and the payload data is being sent.
+        <strong>
+            <pre>
+                def train_avatar_group(group_id):
+                    ...
+                    payload = {"group_id": group_id}
+                    ...
+                    response = requests.post("https://api.heygen.com/v2/photo_avatar/train",
+                                            headers=get_headers(), json=payload)
+                    if response.status_code == 200:
+                        data = response.json()
+                        if data.get("error") is None:
+                            return True, "Training started successfully"
+                        else:
+                            return False, f"Error starting training: {data.get('error')}"
+                    elif response.status_code == 400:
+                        ...
+                        return False, "Unable to train avatar. Please check the status of your API key (there are usage limits)."
+                    ...
+            </pre>
+        </strong>
+        <br>
+        When this function is called, this snippet of code tells HeyGen to train the avatar with the given group_id.
+        <br>
+        If HeyGen returns a status code 200 (server received information and can process request) and there is no error, then training has started.
+        If there is a status code 400 (server unable to process request) returned, then training is unable to occur (often due to API usage limits).
         <h4><a href="index.html">Back</a></h4>
     </body>
 </html>
